@@ -3,15 +3,19 @@
 // lambertian
 lambertian::lambertian(const color& a) : albedo(a) {}
 
-bool lambertian::scatter(const ray& r_in,
-    const hit_record& rec, color& attenuation, ray& scattered) const {
+bool lambertian::scatter(
+    const ray& r_in,
+    const hit_record& rec,
+    color& attenuation,
+    ray& scattered
+) const {
     auto scatter_direction = rec.normal + random_unit_vector();
 
     if (scatter_direction.near_zero()) {
         scatter_direction = rec.normal;
     }
 
-    scattered = ray(rec.p, scatter_direction);
+    scattered = ray(rec.p, scatter_direction, r_in.time());
     attenuation = albedo;
 
     return true;
@@ -21,10 +25,14 @@ bool lambertian::scatter(const ray& r_in,
 // metal
 metal::metal(const color& a, double f) : albedo(a), fuzz(f < 1 ? f : 1) {}
 
-bool metal::scatter(const ray& r_in,
-    const hit_record& rec, color& attenuation, ray& scattered) const {
+bool metal::scatter(
+    const ray& r_in,
+    const hit_record& rec,
+    color& attenuation,
+    ray& scattered
+) const {
     vec3 reflected = reflect(unit_vector(r_in.direction()), rec.normal);
-    scattered = ray(rec.p, reflected);
+    scattered = ray(rec.p, reflected + fuzz * random_in_unit_sphere(), r_in.time());
     attenuation = albedo;
 
     return (dot(scattered.direction(), rec.normal) > 0);
@@ -34,8 +42,12 @@ bool metal::scatter(const ray& r_in,
 // dielectric
 dielectric::dielectric(double index_of_refraction) : ir(index_of_refraction) {}
 
-bool dielectric::scatter(const ray& r_in,
-    const hit_record& rec, color& attenuation, ray& scattered) const {
+bool dielectric::scatter(
+    const ray& r_in,
+    const hit_record& rec,
+    color& attenuation,
+    ray& scattered
+) const {
     attenuation = color(1.0, 1.0, 1.0);
     double refraction_ratio = rec.front_face ? (1.0 / ir) : ir;
 
@@ -52,7 +64,7 @@ bool dielectric::scatter(const ray& r_in,
     else {
         direction = refract(unit_direction, rec.normal, refraction_ratio);
     }
-    scattered = ray(rec.p, direction);
+    scattered = ray(rec.p, direction, r_in.time());
 
     return true;
 }

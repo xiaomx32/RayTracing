@@ -42,6 +42,9 @@
     <ClInclude Include="src\vec3\vec3.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\moving_sphere\moving_sphere.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\hittable_list\hittable_list.cpp">
@@ -72,6 +75,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\moving_sphere\moving_sphere.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
