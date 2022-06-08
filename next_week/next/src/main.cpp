@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "vec3/vec3.h"
 #include "ray/ray.h"
 #include "camera/camera.h"
@@ -9,10 +11,7 @@
 #include "material/material.h"
 #include "moving_sphere/moving_sphere.h"
 
-#include <iostream>
-
 hittable_list random_scene();
-
 double hit_sphere(const point3& center, double radius, const ray& r);
 color ray_color(const ray& r, const hittable& world, int depth);
 
@@ -33,7 +32,7 @@ int main() {
     auto dist_to_focus = 10.0;
     auto aperture = 0.1;
     int image_height = static_cast<int>(image_width / aspect_ratio);
-    camera cam(lookfrom, lookat, vup, 20, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0);
+    camera cam(lookfrom, lookat, vup, 20, aspect_ratio, aperture, dist_to_focus, 0.0, 2.0);
 
     // Render
     std::cout << "P3\n" << image_width << " " << image_height << "\n255\n";
@@ -111,14 +110,14 @@ hittable_list random_scene() {
 
             if ((center - point3(4, 0.2, 0)).length() > 0.9) {
                 shared_ptr<material> sphere_material;
-
                 if (choose_mat < 0.8) {
                     // diffuse
                     auto albedo = color::random() * color::random();
                     sphere_material = make_shared<lambertian>(albedo);
                     auto center2 = center + vec3(0, random_double(0, .5), 0);
                     world.add(make_shared<moving_sphere>(
-                        center, center2, 0.0, 1.0, 0.2, sphere_material));
+                        center, center2, 0.0, 1.0, 0.2, sphere_material
+                        ));
                 }
                 else if (choose_mat < 0.95) {
                     // metal

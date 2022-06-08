@@ -23,14 +23,18 @@ public:
     );
 
     virtual bool hit(
-        const ray& r, double t_min, double t_max, hit_record& rec) const override;
+        const ray& r,
+        double t_min,
+        double t_max,
+        hit_record& rec
+    ) const override;
 
     point3 center(double time) const;
 
 public:
     point3 center0, center1;
-    double time0, time1;
-    double radius;
+    double time0 = 0.0, time1 = 0.0;
+    double radius = 0.0;
     shared_ptr<material> mat_ptr;
 };
 #endif

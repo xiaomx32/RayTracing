@@ -24,10 +24,8 @@ private:
     point3 lower_left_corner;
     vec3 horizontal;
     vec3 vertical;
-
     vec3 u, v, w;
     double lens_radius;
-
     double time0, time1;  // shutter open/close times
 };
 #endif

@@ -38,5 +38,6 @@ ray camera::get_ray(double s, double t) const {
     return ray(
         origin + offset,
         lower_left_corner + s * horizontal + t * vertical - origin - offset,
-        random_double(time0, time1));
+        random_double(time0, time1)
+    );
 }

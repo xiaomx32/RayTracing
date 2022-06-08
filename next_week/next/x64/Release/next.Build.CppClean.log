@@ -2,8 +2,9 @@ e:\c++_code\raytracing\next_week\next\x64\release\vc142.pdb
 e:\c++_code\raytracing\next_week\next\x64\release\vec3.obj
 e:\c++_code\raytracing\next_week\next\x64\release\sphere.obj
 e:\c++_code\raytracing\next_week\next\x64\release\rtweekend.obj
-e:\c++_code\raytracing\next_week\next\x64\release\ray.obj
 e:\c++_code\raytracing\next_week\next\x64\release\moving_sphere.obj
+e:\c++_code\raytracing\next_week\next\x64\release\material.obj
+e:\c++_code\raytracing\next_week\next\x64\release\main.obj
 e:\c++_code\raytracing\next_week\next\x64\release\hittable_list.obj
 e:\c++_code\raytracing\next_week\next\x64\release\hittable.obj
 e:\c++_code\raytracing\next_week\next\x64\release\color.obj
