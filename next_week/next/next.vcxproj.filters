@@ -51,6 +51,12 @@
     <ClInclude Include="src\bvh\bvh.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\texture\texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\perlin\perlin.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\hittable_list\hittable_list.cpp">
@@ -90,6 +96,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\bvh\bvh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\texture\texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\perlin\perlin.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

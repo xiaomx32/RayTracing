@@ -1,6 +1,7 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 
+#include "../texture/texture.h"
 #include "../hittable/hittable.h"
 #include "../rtweekend/rtweekend.h"
 #include "../ray/ray.h"
@@ -22,6 +23,7 @@ public:
 class lambertian : public material {
 public:
     lambertian(const color& a);
+    lambertian(shared_ptr<texture> a);
 
     virtual bool scatter(
         const ray& r_in,
@@ -31,7 +33,7 @@ public:
     ) const override;
 
 public:
-    color albedo;
+    shared_ptr<texture> albedo;
 };
 
 

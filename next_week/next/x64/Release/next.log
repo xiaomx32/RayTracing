@@ -1,4 +1,5 @@
-﻿  aabb.cpp
+﻿D:\Visual Studio file\Visual Studio File\MSBuild\Microsoft\VC\v160\Microsoft.CppClean.targets(77,5): warning : 文件“e:\c++_code\raytracing\next_week\next\x64\release\next.pdb”正由另一进程使用，因此该进程无法访问此文件。
+  aabb.cpp
   bvh.cpp
   camera.cpp
   color.cpp
@@ -7,12 +8,14 @@
   main.cpp
   material.cpp
   moving_sphere.cpp
+  perlin.cpp
   ray.cpp
   rtweekend.cpp
   sphere.cpp
+  texture.cpp
   vec3.cpp
   正在生成代码
   Previous IPDB not found, fall back to full compilation.
-  All 354 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 471 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   已完成代码的生成
   next.vcxproj -> E:\C++_Code\RayTracing\next_week\next\x64\Release\next.exe

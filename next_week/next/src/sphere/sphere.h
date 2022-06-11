@@ -17,5 +17,7 @@ public:
 	double radius = 0.0;
 	shared_ptr<material> mat_ptr;
 
+private:
+	static void get_sphere_uv(const point3& p, double& u, double& v);
 };
 #endif
