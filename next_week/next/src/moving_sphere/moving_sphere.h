@@ -7,6 +7,8 @@
 * 从 `center0` 线性运动到 `center1`，
 * 超出这个时间段, 这个球心依然在动
 */
+
+#include "../aabb/aabb.h"
 #include "../rtweekend/rtweekend.h"
 #include "../hittable/hittable.h"
 
@@ -28,6 +30,8 @@ public:
         double t_max,
         hit_record& rec
     ) const override;
+
+    virtual bool bounding_box(double _time0, double _time1, aabb& output_box) const override;
 
     point3 center(double time) const;
 

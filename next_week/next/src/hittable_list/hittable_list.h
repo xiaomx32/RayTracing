@@ -1,6 +1,7 @@
 #ifndef HITTABLE_LIST_H
 #define HITTABLE_LIST_H
 
+#include "../aabb/aabb.h"
 #include "../hittable/hittable.h"
 #include <memory>
 #include <vector>
@@ -17,6 +18,7 @@ public:
 	void add(shared_ptr<hittable> object);
 
 	virtual bool hit(const ray& r, double t_min, double t_max, hit_record& rec) const override;
+	virtual bool bounding_box(double time0, double time1, aabb& output_box) const override;
 
 public:
 	std::vector<shared_ptr<hittable>> objects;

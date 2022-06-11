@@ -139,6 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\aabb\aabb.h" />
+    <ClInclude Include="src\bvh\bvh.h" />
     <ClInclude Include="src\camera\camera.h" />
     <ClInclude Include="src\color\color.h" />
     <ClInclude Include="src\hittable\hittable.h" />
@@ -151,6 +153,8 @@
     <ClInclude Include="src\vec3\vec3.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\aabb\aabb.cpp" />
+    <ClCompile Include="src\bvh\bvh.cpp" />
     <ClCompile Include="src\camera\camera.cpp" />
     <ClCompile Include="src\color\color.cpp" />
     <ClCompile Include="src\hittable\hittable.cpp" />
